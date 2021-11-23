@@ -1,13 +1,124 @@
-body {
+*{
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+
+}
+body {
+  font-family: 'Yekan' ,sans-serif;
+  direction: rtl;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.task-header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #4581d9;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+.addTask{
+  padding: 1rem 2rem;
+  font-size: large;
+  width: 24rem;
+}
+.addTask label{
+  font-size: medium;
+}
+.addTask input{
+  display: block;
+  margin: 0.8rem 0;
+}
+.Check-Control{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Check-Control label{
+  padding: 0.2rem;
+}
+.Task-Control{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#task-text{
+  font-family: 'Yekan',sans-serif;
+  font-size: medium;
+  width: 20rem;
+  border-radius: 0.6rem;
+  border: 0.15rem solid #4581d9;
+  padding: 0 0.5rem;
+}
+#task-checkbox{
+  display: inline;
+  font: inherit;
+  color: currentColor;
+  width: 1rem;
+  height: 1rem;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  
+}
+input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+#save-task{
+  display: block;
+  font: inherit;
+  font-size: medium;
+  border: 0.15rem solid #4581d9;
+  padding: 0 1rem;
+  border-radius: 0.8rem;
+}
+.Task-List{
+  /* margin: 1rem; */
+  overflow: auto;
+  height: 30rem;
+  width: fit-content;
+  padding: 1rem;
+}
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+.Task{
+  display: flex;
+  width: 23rem;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem 0.5rem;
+  margin: 0.8rem 0;
+  box-sizing: content-box;
+}
+.Task-Content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Task-Content p{
+  padding: 0 0.3rem;
+}
+.Task-Buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Task-Buttons i{
+  padding: 0.3rem;
+}
+.Task-Title-Edit{
+  font-family: 'Yekan',sans-serif;
+  font-size: medium;
+  width: 20rem;
+  border-radius: 0.6rem;
+  border: none;
+  outline: none;
+  padding: 0 0.5rem;
+}
+

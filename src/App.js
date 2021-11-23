@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import AddTask from './components/AddTask';
+import TaskList from './components/TaskList';
+
+export const Context = React.createContext();
 
 function App() {
+
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      return JSON.parse(savedTasks);
+    } else {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="task-header">
+        <h1>مدیریت زمان BAM</h1>
       </header>
-    </div>
+      <Context.Provider value={{ tasks, setTasks }}>
+        <AddTask />
+        <TaskList />
+      </Context.Provider>
+
+    </>
   );
 }
 
