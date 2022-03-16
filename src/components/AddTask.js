@@ -9,7 +9,7 @@ const AddTask = () => {
         e.preventDefault();
         if (task !== "") {
             const newTask = {
-                id: Math.floor(Math.random() * 100),
+                id: Math.floor(Math.random() * 10000),
                 task: task,
                 checked: taskState
             };
